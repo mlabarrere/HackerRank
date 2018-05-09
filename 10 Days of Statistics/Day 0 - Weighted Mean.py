@@ -1,3 +1,5 @@
+#Day 0: Weighted Mean
+
 def weightedMean(n, ar, wg):
     wglist=[a*b for a,b in zip(ar,wg)];
     return sum(wglist)/sum(wg);
