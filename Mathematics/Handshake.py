@@ -1,6 +1,7 @@
 # Handshake
 
-import sys, math
+import sys
+import math
 
 
 T = int(input().strip());
