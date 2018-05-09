@@ -1,7 +1,6 @@
 // Day 2: Conditional Statements: If-Else
 
 function getGrade(score) {
-    let grade;
     if (score>25){
         return "A";
     } else if (score>20){
