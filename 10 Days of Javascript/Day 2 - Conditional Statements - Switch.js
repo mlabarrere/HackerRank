@@ -9,14 +9,13 @@ function getLetter(s) {
     case "o":
     case "u":
         return "A";
-        break;
+
     case "b":
     case "c":
     case "d":
     case "f":
     case "g":
         return "B";
-        break;
     
     case "h":
     case "j":
@@ -24,9 +23,9 @@ function getLetter(s) {
     case "l":
     case "m":
         return "C";
-        break;
+
     default:
         return "D";
-        break;
+
     } 
 }
