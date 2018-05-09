@@ -97,7 +97,7 @@ def huntAndTrackDown(size,grid):
 
 
 if __name__ == "__main__": 
-    size = int(raw_input()) 
-    board = [[j for j in raw_input().strip()] for i in range(size)]  
+    size = int(input()) 
+    board = [[j for j in input().strip()] for i in range(size)]  
     huntAndTrackDown(size, board)
 
