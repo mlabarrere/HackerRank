@@ -5,7 +5,7 @@ from math import factorial
 from math import exp
 
 def poisson(k,lam):
-    return (lam**k)*exp(-lam)/factorial(k);
+    return (lam**k)*exp(-lam)/factorial(k)
 
 average = float(input())
 variable = float(input())
