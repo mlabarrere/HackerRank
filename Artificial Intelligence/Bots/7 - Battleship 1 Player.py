@@ -21,19 +21,35 @@ def getListHitShots(size,grid):
     return listHitShots
 
 
-def testShotAlreadyMade(row,col,listShoot): return [row,col] in listShoot
+def testShotAlreadyMade(row,col,listShoot): 
+	return [row,col] in listShoot
 
 # Shooting Functions
-def shootEast(row,col): print(str(row)+" "+str(col+1))
-def shootWest(row,col): print(str(row)+" "+str(col-1))
-def shootSouth(row,col): print(str(row-1)+" "+str(col))
-def shootNorth(row,col): print(str(row+1)+" "+str(col))
+def shootEast(row,col): 
+	print(str(row)+" "+str(col+1))
+
+def shootWest(row,col): 
+	print(str(row)+" "+str(col-1))
+
+def shootSouth(row,col): 
+	print(str(row-1)+" "+str(col))
+
+def shootNorth(row,col): 
+	print(str(row+1)+" "+str(col))
 
 # Tests nerowt valid and emptcol cell Function
-def eastFree(row,col,grid): return col+1<=size-1 and grid[row][col+1]=="-"
-def westFree(row,col,grid): return col-1>=0 and grid[row][col-1]=="-"
-def northFree(row,col,grid): return row-1>=0 and grid[row+1][col]=="-"
-def southFree(row,col,grid): return row+1<=size-1 and grid[row-1][col]=="-"
+def eastFree(row,col,grid): 
+	return col+1<=size-1 and grid[row][col+1]=="-"
+
+def westFree(row,col,grid): 
+	return col-1>=0 and grid[row][col-1]=="-"
+
+def northFree(row,col,grid): 
+	return row-1>=0 and grid[row+1][col]=="-"
+
+def southFree(row,col,grid): 
+	return row+1<=size-1 and grid[row-1][col]=="-"
+
 
 def oneHitSpotted(size,grid):
 	hit=getListHitShots(size,grid)
@@ -57,7 +73,7 @@ def oneHitSpotted(size,grid):
 
 def moreThanOneHit(size,grid):
 	hit=getListHitShots(size,grid)
-	for i in range(len(hit)):
+	for i in enummerate(hit):
 		R_hit=hit[i][0]
 		C_hit=hit[i][1]
 		if southFree(R_hit,C_hit,grid):
@@ -74,12 +90,14 @@ def moreThanOneHit(size,grid):
 			break
 
 # Is a Hit as been spotted?
-def targetAcquired(size,grid): return len(getListHitShots(size,grid))>=1
+def targetAcquired(size,grid): 
+	return len(getListHitShots(size,grid))>=1
 
 def fire_at_random(size,board):
     R = random.randint(0, size-1)
     C = random.randint(0, size-1)
     listMissedShots=getListMissedShots(size,board)
+
     while testShotAlreadyMade(R,C,listMissedShots):
         R = random.randint(0, size-1)
         C = random.randint(0, size-1)
@@ -100,4 +118,3 @@ if __name__ == "__main__":
     size = int(input()) 
     board = [[j for j in input().strip()] for i in range(size)]  
     huntAndTrackDown(size, board)
-
